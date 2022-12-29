@@ -7,7 +7,7 @@ from rest_framework.viewsets import ModelViewSet
 from api.dnslookup import creatDnsZone, whoisDomain, ping
 from api.models import Ip, Network, Faq
 from api.serializers import IpSerializer, NetworkSerializer, FaqSerializer
-
+from django.views.generic import TemplateView
 
 # creat a view  fom a function creatDnsZone
 class zoneView(View):
@@ -72,3 +72,7 @@ class PingView(View):
             return HttpResponse(json.dumps(whois, indent=4, sort_keys=True, default=str))
         else:
             return HttpResponse(json.dumps("info not found", indent=4, sort_keys=True, default=str))
+
+
+class IndexView (TemplateView):
+    template_name = 'index.html'

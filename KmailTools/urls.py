@@ -32,7 +32,7 @@ urlpatterns = [
     path('api/ping/', PingView.as_view()),
     # build a path for ip to retunr a object not A list by ip
     path('api/ip/', ipView.as_view({'get': 'list'})),
-
+    path(r'^$' , IndexView.as_view())
 
 
 
