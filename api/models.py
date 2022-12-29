@@ -37,6 +37,7 @@ class Faq(models.Model):
         SERVERCLOUD = 'SERVERCLOUD', _('Servercloud')
         DOMAINES = 'DOMAINES', _('Domaines')
         SSL = 'SSL', _('Ssl')
+        WORKSPACE = 'WORKSPACE', _('Workspace')
 
     type = models.CharField(max_length=50, choices=product.choices, default=product.MAIL)
     subject = models.CharField(max_length=100)
